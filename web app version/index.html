@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoopPlus Web</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="../js/device-detector.js"></script>
+</head>
+<body>
+    <!-- Left Sidebar -->
+    <aside class="left-sidebar">
+        <!-- TikTok Logo -->
+        <div class="logo">
+            <img src="Logo.png" alt="LoopPlus" class="logo-image">
+        </div>
+        
+        <!-- Search Bar -->
+        <div class="search-container">
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="he came down to eart..." class="search-input">
+            </div>
+            <div class="search-results"></div>
+        </div>
+        
+        <!-- Navigation Menu -->
+        <nav class="nav-menu">
+            <a href="#" class="nav-item active">
+                <i class="fas fa-home"></i>
+                <span>Loop</span>
+            </a>
+            <a href="explore.html" class="nav-item">
+                <i class="fas fa-compass"></i>
+                <span>Explore+</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-users"></i>
+                <span>Following</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-user-friends"></i>
+                <span>Friends</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-broadcast-tower"></i>
+                <span>STREAM</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-envelope"></i>
+                <span>Messages</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-bell"></i>
+                <span>Activity</span>
+            </a>
+            <a href="upload.html" class="nav-item">
+                <i class="fas fa-plus-circle"></i>
+                <span>Upload</span>
+            </a>
+            <a href="profile.html" class="nav-item">
+                <i class="fas fa-user-circle"></i>
+                <span>Profile</span>
+            </a>
+            <a href="#" class="nav-item" id="more-btn">
+                <i class="fas fa-grip-horizontal"></i>
+                <span>More</span>
+            </a>
+        </nav>
+        
+        <!-- More Popup Menu -->
+        <div class="more-popup" id="more-popup">
+            <div class="popup-content">
+                <div class="popup-header">
+                    <h3>More</h3>
+                    <button class="close-popup" id="close-popup">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="popup-items">
+                    <button class="popup-item">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </button>
+                    <button class="popup-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Privacy</span>
+                    </button>
+                    <button class="popup-item">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Help Center</span>
+                    </button>
+                    <button class="popup-item">
+                        <i class="fas fa-info-circle"></i>
+                        <span>About</span>
+                    </button>
+                    <button class="popup-item">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Business</span>
+                    </button>
+                    <button class="popup-item">
+                        <i class="fas fa-palette"></i>
+                        <span>Creator Portal</span>
+                    </button>
+                    <button class="popup-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Analytics</span>
+                    </button>
+                    <button class="popup-item">
+                        <i class="fas fa-language"></i>
+                        <span>Language</span>
+                    </button>
+                    <button class="popup-item">
+                        <i class="fas fa-moon"></i>
+                        <span>Dark Mode</span>
+                    </button>
+                    <button class="popup-item">
+                        <i class="fas fa-bell"></i>
+                        <span>Notifications</span>
+                    </button>
+                    <button class="popup-item">
+                        <i class="fas fa-download"></i>
+                        <span>Download App</span>
+                    </button>
+                    <button class="popup-item">
+                        <i class="fas fa-share-alt"></i>
+                        <span>Share LoopPlus</span>
+                    </button>
+                    <button class="popup-item">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Log Out</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Video Container -->
+        <div class="video-container">
+            <!-- Video 1 -->
+            <div class="video-item active" data-video-id="1">
+                <div class="video-player">
+                    <video class="video-element" loop muted playsinline preload="metadata">
+                        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+                    </video>
+                    
+                    <!-- Video Overlay -->
+                    <div class="video-overlay">
+                        <!-- Progress Bar -->
+                        <div class="video-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Video Info -->
+                        <div class="video-info">
+                            <div class="video-description">
+                                <h3 class="video-title">Amazing Nature Documentary</h3>
+                                <p class="video-caption">Experience the beauty of nature in stunning 4K quality 🌿 #nature #wildlife</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Mute Button -->
+                    <div class="mute-button" title="Toggle sound">
+                        <i class="fas fa-volume-mute"></i>
+                    </div>
+                    
+                    <!-- Play/Pause Indicator -->
+                    <div class="play-indicator">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    
+                    <!-- Username -->
+                    <div class="username" title="@israelobasola">@israelobasola</div>
+                    
+                    <!-- Right Side Actions -->
+                    <div class="video-actions">
+                        <!-- Profile Picture with Follow -->
+                        <div class="profile-action">
+                            <img src="https://picsum.photos/seed/israelobasola/56/56" alt="Profile" class="profile-pic">
+                            <div class="follow-btn" title="Follow user">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                        </div>
+                        
+                        <!-- Like -->
+                        <div class="action-btn" title="Like video">
+                            <i class="far fa-heart"></i>
+                            <span class="action-count">323.5K</span>
+                        </div>
+                        
+                        <!-- Comment -->
+                        <div class="action-btn" title="Comment">
+                            <i class="far fa-comment"></i>
+                            <span class="action-count">4.6K</span>
+                        </div>
+                        
+                        <!-- Save -->
+                        <div class="action-btn" title="Save video">
+                            <i class="far fa-bookmark"></i>
+                            <span class="action-count">25.9K</span>
+                        </div>
+                        
+                        <!-- Share -->
+                        <div class="action-btn" title="Share video">
+                            <i class="fas fa-share"></i>
+                            <span class="action-count">15.2K</span>
+                        </div>
+                        
+                        <!-- Sound -->
+                        <div class="action-btn sound-btn" title="Original Sound">
+                            <i class="fas fa-music"></i>
+                            <span class="action-count">Original Sound</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Video 2 -->
+            <div class="video-item" data-video-id="2">
+                <div class="video-player">
+                    <video class="video-element" loop muted playsinline preload="metadata">
+                        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+                    </video>
+                    
+                    <!-- Video Overlay -->
+                    <div class="video-overlay">
+                        <!-- Progress Bar -->
+                        <div class="video-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Video Info -->
+                        <div class="video-info">
+                            <div class="video-description">
+                                <h3 class="video-title">Dance Performance 2024</h3>
+                                <p class="video-caption">Latest dance moves that will blow your mind 💃 #dance #trending #viral</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mute-button" title="Toggle sound">
+                        <i class="fas fa-volume-mute"></i>
+                    </div>
+                    
+                    <div class="play-indicator">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    
+                    <div class="username" title="@dancequeen">@dancequeen</div>
+                    
+                    <div class="video-actions">
+                        <div class="profile-action">
+                            <img src="https://picsum.photos/seed/dancequeen/56/56" alt="Profile" class="profile-pic">
+                            <div class="follow-btn" title="Follow user">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="action-btn" title="Like video">
+                            <i class="far fa-heart"></i>
+                            <span class="action-count">89.2K</span>
+                        </div>
+                        
+                        <div class="action-btn" title="Comment">
+                            <i class="far fa-comment"></i>
+                            <span class="action-count">1.1K</span>
+                        </div>
+                        
+                        <div class="action-btn" title="Save video">
+                            <i class="far fa-bookmark"></i>
+                            <span class="action-count">7.8K</span>
+                        </div>
+                        
+                        <div class="action-btn" title="Share video">
+                            <i class="fas fa-share"></i>
+                            <span class="action-count">4.5K</span>
+                        </div>
+                        
+                        <div class="action-btn sound-btn" title="Dance Beat">
+                            <i class="fas fa-music"></i>
+                            <span class="action-count">Dance Beat</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Video 3 -->
+            <div class="video-item" data-video-id="3">
+                <div class="video-player">
+                    <video class="video-element" loop muted playsinline preload="metadata">
+                        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4" type="video/mp4">
+                    </video>
+                    
+                    <!-- Video Overlay -->
+                    <div class="video-overlay">
+                        <!-- Progress Bar -->
+                        <div class="video-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Video Info -->
+                        <div class="video-info">
+                            <div class="video-description">
+                                <h3 class="video-title">Comedy Special 2024</h3>
+                                <p class="video-caption">Laugh till you drop with the best comedy moments 😂 #comedy #funny #viral</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mute-button" title="Toggle sound">
+                        <i class="fas fa-volume-mute"></i>
+                    </div>
+                    
+                    <div class="play-indicator">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    
+                    <div class="username" title="@comedyking">@comedyking</div>
+                    
+                    <div class="video-actions">
+                        <div class="profile-action">
+                            <img src="https://picsum.photos/seed/comedyking/56/56" alt="Profile" class="profile-pic">
+                            <div class="follow-btn" title="Follow user">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="action-btn" title="Like video">
+                            <i class="far fa-heart"></i>
+                            <span class="action-count">234K</span>
+                        </div>
+                        
+                        <div class="action-btn" title="Comment">
+                            <i class="far fa-comment"></i>
+                            <span class="action-count">5.6K</span>
+                        </div>
+                        
+                        <div class="action-btn" title="Save video">
+                            <i class="far fa-bookmark"></i>
+                            <span class="action-count">25K</span>
+                        </div>
+                        
+                        <div class="action-btn" title="Share video">
+                            <i class="fas fa-share"></i>
+                            <span class="action-count">18K</span>
+                        </div>
+                        
+                        <div class="action-btn sound-btn" title="Comedy Track">
+                            <i class="fas fa-music"></i>
+                            <span class="action-count">Comedy Track</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Video 4 -->
+            <div class="video-item" data-video-id="4">
+                <div class="video-player">
+                    <video class="video-element" loop muted playsinline preload="metadata">
+                        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" type="video/mp4">
+                    </video>
+                    
+                    <!-- Video Overlay -->
+                    <div class="video-overlay">
+                        <!-- Progress Bar -->
+                        <div class="video-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Video Info -->
+                        <div class="video-info">
+                            <div class="video-description">
+                                <h3 class="video-title">Food Paradise Journey</h3>
+                                <p class="video-caption">Explore the most delicious dishes from around the world 🍕 #food #cooking #tasty</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mute-button" title="Toggle sound">
+                        <i class="fas fa-volume-mute"></i>
+                    </div>
+                    
+                    <div class="play-indicator">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    
+                    <div class="username" title="@foodie">@foodie</div>
+                    
+                    <div class="video-actions">
+                        <div class="profile-action">
+                            <img src="https://picsum.photos/seed/foodie/56/56" alt="Profile" class="profile-pic">
+                            <div class="follow-btn" title="Follow user">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="action-btn" title="Like video">
+                            <i class="far fa-heart"></i>
+                            <span class="action-count">156K</span>
+                        </div>
+                        
+                        <div class="action-btn" title="Comment">
+                            <i class="far fa-comment"></i>
+                            <span class="action-count">3.2K</span>
+                        </div>
+                        
+                        <div class="action-btn" title="Save video">
+                            <i class="far fa-bookmark"></i>
+                            <span class="action-count">12K</span>
+                        </div>
+                        
+                        <div class="action-btn" title="Share video">
+                            <i class="fas fa-share"></i>
+                            <span class="action-count">8.9K</span>
+                        </div>
+                        
+                        <div class="action-btn sound-btn" title="Food Vibes">
+                            <i class="fas fa-music"></i>
+                            <span class="action-count">Food Vibes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Video 5 -->
+            <div class="video-item" data-video-id="5">
+                <div class="video-player">
+                    <video class="video-element" loop muted playsinline preload="metadata">
+                        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4" type="video/mp4">
+                    </video>
+                    
+                    <!-- Video Overlay -->
+                    <div class="video-overlay">
+                        <!-- Progress Bar -->
+                        <div class="video-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Video Info -->
+                        <div class="video-info">
+                            <div class="video-description">
+                                <h3 class="video-title">Nature's Symphony</h3>
+                                <p class="video-caption">Relaxing sounds and beautiful landscapes from around the world 🌍 #nature #relax #meditation</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mute-button" title="Toggle sound">
+                        <i class="fas fa-volume-mute"></i>
+                    </div>
+                    
+                    <div class="play-indicator">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    
+                    <div class="username" title="@naturelover">@naturelover</div>
+                    
+                    <div class="video-actions">
+                        <div class="profile-action">
+                            <img src="https://picsum.photos/seed/naturelover/56/56" alt="Profile" class="profile-pic">
+                            <div class="follow-btn" title="Follow user">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="action-btn" title="Like video">
+                            <i class="far fa-heart"></i>
+                            <span class="action-count">89.2K</span>
+                        </div>
+                        
+                        <div class="action-btn" title="Comment">
+                            <i class="far fa-comment"></i>
+                            <span class="action-count">1.1K</span>
+                        </div>
+                        
+                        <div class="action-btn" title="Save video">
+                            <i class="far fa-bookmark"></i>
+                            <span class="action-count">7.8K</span>
+                        </div>
+                        
+                        <div class="action-btn" title="Share video">
+                            <i class="fas fa-share"></i>
+                            <span class="action-count">4.5K</span>
+                        </div>
+                        
+                        <div class="action-btn sound-btn" title="Nature Sounds">
+                            <i class="fas fa-music"></i>
+                            <span class="action-count">Nature Sounds</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Navigation Buttons -->
+        <div class="scroll-nav">
+            <button class="scroll-btn up">
+                <i class="fas fa-chevron-up"></i>
+            </button>
+            <button class="scroll-btn down">
+                <i class="fas fa-chevron-down"></i>
+            </button>
+        </div>
+    </main>
+    <script src="js/index.js"></script>
+</body>
+</html>

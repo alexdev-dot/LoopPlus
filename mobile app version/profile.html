@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Profile - LoopPlus Mobile</title>
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="mobile-splash-screen" id="mobile-splash-screen">
+        <img src="Logo.png" alt="LoopPlus" class="mobile-splash-logo">
+    </div>
+    <!-- Mobile Profile Header -->
+    <header class="mobile-profile-header">
+        <div class="mobile-header-content">
+            <button class="mobile-back-btn" onclick="history.back()">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <h1 class="mobile-header-title">Profile</h1>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-ellipsis-h"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Profile Content -->
+    <main class="mobile-profile-main">
+        <!-- Profile Info Section -->
+        <section class="mobile-profile-info">
+            <div class="mobile-profile-header-info">
+                <!-- Profile Avatar -->
+                <div class="mobile-profile-avatar-section">
+                    <div class="mobile-profile-avatar-wrapper">
+                        <img src="https://picsum.photos/seed/user/120/120" alt="Profile" class="mobile-profile-avatar">
+                        <div class="mobile-verified-badge">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="mobile-avatar-status online"></div>
+                    </div>
+                    <button class="mobile-edit-avatar-btn">
+                        <i class="fas fa-camera"></i>
+                    </button>
+                </div>
+                
+                <!-- Profile Details -->
+                <div class="mobile-profile-details">
+                    <div class="mobile-username-section">
+                        <h2 class="mobile-username">@username</h2>
+                        <div class="mobile-profile-badges">
+                            <span class="mobile-badge verified">
+                                <i class="fas fa-check-circle"></i>
+                                Verified
+                            </span>
+                            <span class="mobile-badge creator">
+                                <i class="fas fa-star"></i>
+                                Creator
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="mobile-profile-bio">
+                        <p>Welcome to my profile! 🎵 Creating amazing content daily. Follow for more! 🚀</p>
+                        <div class="mobile-bio-links">
+                            <a href="#" class="mobile-bio-link">
+                                <i class="fas fa-link"></i>
+                                mywebsite.com
+                            </a>
+                            <a href="#" class="mobile-bio-link">
+                                <i class="fab fa-instagram"></i>
+                                @username
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Profile Stats -->
+            <div class="mobile-profile-stats">
+                <div class="mobile-stat-item">
+                    <div class="mobile-stat-number">1.2M</div>
+                    <div class="mobile-stat-label">Followers</div>
+                    <div class="mobile-stat-change positive">
+                        <i class="fas fa-arrow-up"></i> 12.5%
+                    </div>
+                </div>
+                <div class="mobile-stat-item">
+                    <div class="mobile-stat-number">847</div>
+                    <div class="mobile-stat-label">Following</div>
+                </div>
+                <div class="mobile-stat-item">
+                    <div class="mobile-stat-number">45.6M</div>
+                    <div class="mobile-stat-label">Likes</div>
+                    <div class="mobile-stat-change positive">
+                        <i class="fas fa-arrow-up"></i> 8.3%
+                    </div>
+                </div>
+                <div class="mobile-stat-item">
+                    <div class="mobile-stat-number">234</div>
+                    <div class="mobile-stat-label">Videos</div>
+                    <div class="mobile-stat-change positive">
+                        <i class="fas fa-arrow-up"></i> 15.7%
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Profile Actions -->
+            <div class="mobile-profile-actions">
+                <button class="mobile-message-btn">
+                    <i class="fas fa-envelope"></i>
+                    <span>Message</span>
+                </button>
+                <button class="mobile-share-btn">
+                    <i class="fas fa-share"></i>
+                    <span>Share</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Content Navigation Tabs -->
+        <section class="mobile-content-nav">
+            <div class="mobile-nav-tabs">
+                <button class="mobile-nav-tab active" data-tab="videos">
+                    <i class="fas fa-video"></i>
+                    <span>Videos</span>
+                </button>
+                <button class="mobile-nav-tab" data-tab="liked">
+                    <i class="fas fa-heart"></i>
+                    <span>Liked</span>
+                </button>
+                <button class="mobile-nav-tab" data-tab="saved">
+                    <i class="fas fa-bookmark"></i>
+                    <span>Saved</span>
+                </button>
+                <button class="mobile-nav-tab" data-tab="playlists">
+                    <i class="fas fa-list"></i>
+                    <span>Playlists</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Content Area -->
+        <section class="mobile-content-area">
+            <!-- Videos Tab -->
+            <div class="mobile-tab-content active" id="videos-tab">
+                <div class="mobile-content-header">
+                    <h3 class="mobile-content-title">My Videos</h3>
+                    <div class="mobile-content-filters">
+                        <button class="mobile-filter-btn active">All</button>
+                        <button class="mobile-filter-btn">Recent</button>
+                        <button class="mobile-filter-btn">Popular</button>
+                    </div>
+                </div>
+                
+                <div class="mobile-videos-grid">
+                    <!-- Video Card 1 -->
+                    <div class="mobile-video-card">
+                        <div class="mobile-video-thumbnail">
+                            <img src="https://picsum.photos/seed/video1/200/250" alt="Video thumbnail">
+                            <div class="mobile-video-overlay">
+                                <div class="mobile-play-icon">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                                <div class="mobile-video-stats">
+                                    <span><i class="fas fa-eye"></i> 1.2M</span>
+                                    <span><i class="fas fa-heart"></i> 89K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mobile-video-info">
+                            <h4 class="mobile-video-title">Amazing Dance Moves! 💃</h4>
+                            <p class="mobile-video-meta">2 days ago • 1.2M views</p>
+                        </div>
+                    </div>
+
+                    <!-- Video Card 2 -->
+                    <div class="mobile-video-card">
+                        <div class="mobile-video-thumbnail">
+                            <img src="https://picsum.photos/seed/video2/200/250" alt="Video thumbnail">
+                            <div class="mobile-video-overlay">
+                                <div class="mobile-play-icon">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                                <div class="mobile-video-stats">
+                                    <span><i class="fas fa-eye"></i> 856K</span>
+                                    <span><i class="fas fa-heart"></i> 67K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mobile-video-info">
+                            <h4 class="mobile-video-title">Quick Recipe Tutorial 🍳</h4>
+                            <p class="mobile-video-meta">5 days ago • 856K views</p>
+                        </div>
+                    </div>
+
+                    <!-- Video Card 3 -->
+                    <div class="mobile-video-card">
+                        <div class="mobile-video-thumbnail">
+                            <img src="https://picsum.photos/seed/video3/200/250" alt="Video thumbnail">
+                            <div class="mobile-video-overlay">
+                                <div class="mobile-play-icon">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                                <div class="mobile-video-stats">
+                                    <span><i class="fas fa-eye"></i> 2.1M</span>
+                                    <span><i class="fas fa-heart"></i> 145K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mobile-video-info">
+                            <h4 class="mobile-video-title">Epic Gaming Moment! 🎮</h4>
+                            <p class="mobile-video-meta">1 week ago • 2.1M views</p>
+                        </div>
+                    </div>
+
+                    <!-- Video Card 4 -->
+                    <div class="mobile-video-card">
+                        <div class="mobile-video-thumbnail">
+                            <img src="https://picsum.photos/seed/video4/200/250" alt="Video thumbnail">
+                            <div class="mobile-video-overlay">
+                                <div class="mobile-play-icon">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                                <div class="mobile-video-stats">
+                                    <span><i class="fas fa-eye"></i> 543K</span>
+                                    <span><i class="fas fa-heart"></i> 42K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mobile-video-info">
+                            <h4 class="mobile-video-title">Funny Moments 😂</h4>
+                            <p class="mobile-video-meta">2 weeks ago • 543K views</p>
+                        </div>
+                    </div>
+
+                    <!-- Video Card 5 -->
+                    <div class="mobile-video-card">
+                        <div class="mobile-video-thumbnail">
+                            <img src="https://picsum.photos/seed/video5/200/250" alt="Video thumbnail">
+                            <div class="mobile-video-overlay">
+                                <div class="mobile-play-icon">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                                <div class="mobile-video-stats">
+                                    <span><i class="fas fa-eye"></i> 156K</span>
+                                    <span><i class="fas fa-heart"></i> 12K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mobile-video-info">
+                            <h4 class="mobile-video-title">Food Vibes 🍕</h4>
+                            <p class="mobile-video-meta">3 weeks ago • 156K views</p>
+                        </div>
+                    </div>
+
+                    <!-- Video Card 6 -->
+                    <div class="mobile-video-card">
+                        <div class="mobile-video-thumbnail">
+                            <img src="https://picsum.photos/seed/video6/200/250" alt="Video thumbnail">
+                            <div class="mobile-video-overlay">
+                                <div class="mobile-play-icon">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                                <div class="mobile-video-stats">
+                                    <span><i class="fas fa-eye"></i> 89.2K</span>
+                                    <span><i class="fas fa-heart"></i> 7.8K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mobile-video-info">
+                            <h4 class="mobile-video-title">Nature Sounds 🌿</h4>
+                            <p class="mobile-video-meta">1 month ago • 89.2K views</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Liked Tab -->
+            <div class="mobile-tab-content" id="liked-tab">
+                <div class="mobile-content-header">
+                    <h3 class="mobile-content-title">Liked Videos</h3>
+                </div>
+                <div class="mobile-empty-state">
+                    <div class="mobile-empty-state-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="mobile-empty-state-title">No liked videos yet</h3>
+                    <p class="mobile-empty-state-description">Start liking videos to see them here!</p>
+                    <button class="mobile-empty-state-action">Explore Videos</button>
+                </div>
+            </div>
+
+            <!-- Saved Tab -->
+            <div class="mobile-tab-content" id="saved-tab">
+                <div class="mobile-content-header">
+                    <h3 class="mobile-content-title">Saved Videos</h3>
+                </div>
+                <div class="mobile-empty-state">
+                    <div class="mobile-empty-state-icon">
+                        <i class="fas fa-bookmark"></i>
+                    </div>
+                    <h3 class="mobile-empty-state-title">No saved videos yet</h3>
+                    <p class="mobile-empty-state-description">Save videos to watch them later!</p>
+                    <button class="mobile-empty-state-action">Explore Videos</button>
+                </div>
+            </div>
+
+            <!-- Playlists Tab -->
+            <div class="mobile-tab-content" id="playlists-tab">
+                <div class="mobile-content-header">
+                    <h3 class="mobile-content-title">My Playlists</h3>
+                    <button class="mobile-create-playlist-btn">
+                        <i class="fas fa-plus"></i>
+                        Create
+                    </button>
+                </div>
+                <div class="mobile-empty-state">
+                    <div class="mobile-empty-state-icon">
+                        <i class="fas fa-list"></i>
+                    </div>
+                    <h3 class="mobile-empty-state-title">No playlists yet</h3>
+                    <p class="mobile-empty-state-description">Create playlists to organize your videos!</p>
+                    <button class="mobile-empty-state-action">Create First Playlist</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav">
+        <a href="index.html" class="mobile-nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="explore.html" class="mobile-nav-item">
+            <i class="fas fa-compass"></i>
+            <span>Explore</span>
+        </a>
+        <button class="mobile-nav-item mobile-create-btn">
+            <i class="fas fa-plus"></i>
+        </button>
+        <a href="#" class="mobile-nav-item">
+            <i class="fas fa-envelope"></i>
+            <span>Messages</span>
+        </a>
+        <a href="profile.html" class="mobile-nav-item active">
+            <i class="fas fa-user-circle"></i>
+            <span>Profile</span>
+        </a>
+    </nav>
+
+    <script src="js/profile.js"></script>
+</body>
+</html>

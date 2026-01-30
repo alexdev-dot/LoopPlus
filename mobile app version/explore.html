@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Explore+ - LoopPlus Mobile</title>
+    <link rel="stylesheet" href="css/explore.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="mobile-splash-screen" id="mobile-splash-screen">
+        <img src="Logo.png" alt="LoopPlus" class="mobile-splash-logo">
+    </div>
+    <!-- Mobile Main Content -->
+    <main class="mobile-main-content explore-main">
+        <!-- Explore Header -->
+        <header class="mobile-explore-header">
+            <h1 class="mobile-explore-title">
+                <i class="fas fa-compass"></i>
+                Explore+
+            </h1>
+            <p class="mobile-explore-subtitle">Discover trending content and creators</p>
+        </header>
+
+        <!-- Mobile Filter Tabs -->
+        <div class="mobile-filter-tabs">
+            <button class="mobile-filter-tab active" data-category="trending">
+                <i class="fas fa-fire"></i>
+                <span>Trending</span>
+            </button>
+            <button class="mobile-filter-tab" data-category="music">
+                <i class="fas fa-music"></i>
+                <span>Music</span>
+            </button>
+            <button class="mobile-filter-tab" data-category="gaming">
+                <i class="fas fa-gamepad"></i>
+                <span>Gaming</span>
+            </button>
+            <button class="mobile-filter-tab" data-category="sports">
+                <i class="fas fa-football-ball"></i>
+                <span>Sports</span>
+            </button>
+            <button class="mobile-filter-tab" data-category="comedy">
+                <i class="fas fa-laugh"></i>
+                <span>Comedy</span>
+            </button>
+            <button class="mobile-filter-tab" data-category="food">
+                <i class="fas fa-utensils"></i>
+                <span>Food</span>
+            </button>
+            <button class="mobile-filter-tab" data-category="travel">
+                <i class="fas fa-plane"></i>
+                <span>Travel</span>
+            </button>
+        </div>
+
+        <!-- Mobile Content Grid -->
+        <div class="mobile-explore-grid">
+            <!-- Trending Videos Section -->
+            <div class="mobile-content-section">
+                <h2 class="mobile-section-title">
+                    <i class="fas fa-fire"></i>
+                    Trending Now
+                </h2>
+                <div class="mobile-video-grid" id="trending-videos">
+                    <!-- Mobile Video Card 1 -->
+                    <div class="mobile-video-card">
+                        <div class="mobile-video-thumbnail">
+                            <img src="https://picsum.photos/seed/trending1/300/400" alt="Video thumbnail">
+                            <div class="mobile-video-overlay">
+                                <div class="mobile-play-icon">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                                <div class="mobile-video-stats">
+                                    <span><i class="fas fa-eye"></i> 1.2M</span>
+                                    <span><i class="fas fa-heart"></i> 89K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mobile-video-info">
+                            <div class="mobile-creator-info">
+                                <img src="https://picsum.photos/seed/creator1/40/40" alt="Creator" class="mobile-creator-avatar">
+                                <div class="mobile-creator-details">
+                                    <h3 class="mobile-creator-name">@trendsetter</h3>
+                                    <p class="mobile-video-title">Amazing dance moves!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Video Card 2 -->
+                    <div class="mobile-video-card">
+                        <div class="mobile-video-thumbnail">
+                            <img src="https://picsum.photos/seed/trending2/300/400" alt="Video thumbnail">
+                            <div class="mobile-video-overlay">
+                                <div class="mobile-play-icon">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                                <div class="mobile-video-stats">
+                                    <span><i class="fas fa-eye"></i> 856K</span>
+                                    <span><i class="fas fa-heart"></i> 67K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mobile-video-info">
+                            <div class="mobile-creator-info">
+                                <img src="https://picsum.photos/seed/creator2/40/40" alt="Creator" class="mobile-creator-avatar">
+                                <div class="mobile-creator-details">
+                                    <h3 class="mobile-creator-name">@foodie</h3>
+                                    <p class="mobile-video-title">Quick recipe tutorial</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Video Card 3 -->
+                    <div class="mobile-video-card">
+                        <div class="mobile-video-thumbnail">
+                            <img src="https://picsum.photos/seed/trending3/300/400" alt="Video thumbnail">
+                            <div class="mobile-video-overlay">
+                                <div class="mobile-play-icon">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                                <div class="mobile-video-stats">
+                                    <span><i class="fas fa-eye"></i> 2.1M</span>
+                                    <span><i class="fas fa-heart"></i> 145K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mobile-video-info">
+                            <div class="mobile-creator-info">
+                                <img src="https://picsum.photos/seed/creator3/40/40" alt="Creator" class="mobile-creator-avatar">
+                                <div class="mobile-creator-details">
+                                    <h3 class="mobile-creator-name">@gamer</h3>
+                                    <p class="mobile-video-title">Epic gaming moment!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Video Card 4 -->
+                    <div class="mobile-video-card">
+                        <div class="mobile-video-thumbnail">
+                            <img src="https://picsum.photos/seed/trending4/300/400" alt="Video thumbnail">
+                            <div class="mobile-video-overlay">
+                                <div class="mobile-play-icon">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                                <div class="mobile-video-stats">
+                                    <span><i class="fas fa-eye"></i> 543K</span>
+                                    <span><i class="fas fa-heart"></i> 42K</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mobile-video-info">
+                            <div class="mobile-creator-info">
+                                <img src="https://picsum.photos/seed/creator4/40/40" alt="Creator" class="mobile-creator-avatar">
+                                <div class="mobile-creator-details">
+                                    <h3 class="mobile-creator-name">@comedy</h3>
+                                    <p class="mobile-video-title">Funny moments compilation</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Popular Creators Section -->
+            <div class="mobile-content-section">
+                <h2 class="mobile-section-title">
+                    <i class="fas fa-star"></i>
+                    Popular Creators
+                </h2>
+                <div class="mobile-creators-grid">
+                    <!-- Mobile Creator 1 -->
+                    <div class="mobile-creator-card">
+                        <img src="https://picsum.photos/seed/popular1/100/100" alt="Creator" class="mobile-creator-large-avatar">
+                        <h3 class="mobile-creator-large-name">@dancer</h3>
+                        <p class="mobile-creator-stats">2.5M followers</p>
+                        <button class="mobile-follow-creator-btn">
+                            <i class="fas fa-plus"></i>
+                            Follow
+                        </button>
+                    </div>
+
+                    <!-- Mobile Creator 2 -->
+                    <div class="mobile-creator-card">
+                        <img src="https://picsum.photos/seed/popular2/100/100" alt="Creator" class="mobile-creator-large-avatar">
+                        <h3 class="mobile-creator-large-name">@chef</h3>
+                        <p class="mobile-creator-stats">1.8M followers</p>
+                        <button class="mobile-follow-creator-btn">
+                            <i class="fas fa-plus"></i>
+                            Follow
+                        </button>
+                    </div>
+
+                    <!-- Mobile Creator 3 -->
+                    <div class="mobile-creator-card">
+                        <img src="https://picsum.photos/seed/popular3/100/100" alt="Creator" class="mobile-creator-large-avatar">
+                        <h3 class="mobile-creator-large-name">@athlete</h3>
+                        <p class="mobile-creator-stats">3.1M followers</p>
+                        <button class="mobile-follow-creator-btn">
+                            <i class="fas fa-plus"></i>
+                            Follow
+                        </button>
+                    </div>
+
+                    <!-- Mobile Creator 4 -->
+                    <div class="mobile-creator-card">
+                        <img src="https://picsum.photos/seed/popular4/100/100" alt="Creator" class="mobile-creator-large-avatar">
+                        <h3 class="mobile-creator-large-name">@musician</h3>
+                        <p class="mobile-creator-stats">4.2M followers</p>
+                        <button class="mobile-follow-creator-btn">
+                            <i class="fas fa-plus"></i>
+                            Follow
+                        </button>
+                    </div>
+
+                    <!-- Mobile Creator 5 -->
+                    <div class="mobile-creator-card">
+                        <img src="https://picsum.photos/seed/popular5/100/100" alt="Creator" class="mobile-creator-large-avatar">
+                        <h3 class="mobile-creator-large-name">@artist</h3>
+                        <p class="mobile-creator-stats">987K followers</p>
+                        <button class="mobile-follow-creator-btn">
+                            <i class="fas fa-plus"></i>
+                            Follow
+                        </button>
+                    </div>
+
+                    <!-- Mobile Creator 6 -->
+                    <div class="mobile-creator-card">
+                        <img src="https://picsum.photos/seed/popular6/100/100" alt="Creator" class="mobile-creator-large-avatar">
+                        <h3 class="mobile-creator-large-name">@traveler</h3>
+                        <p class="mobile-creator-stats">1.5M followers</p>
+                        <button class="mobile-follow-creator-btn">
+                            <i class="fas fa-plus"></i>
+                            Follow
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav">
+        <a href="index.html" class="mobile-nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="explore.html" class="mobile-nav-item active">
+            <i class="fas fa-compass"></i>
+            <span>Explore</span>
+        </a>
+        <button class="mobile-nav-item mobile-create-btn">
+            <i class="fas fa-plus"></i>
+        </button>
+        <a href="#" class="mobile-nav-item">
+            <i class="fas fa-envelope"></i>
+            <span>Messages</span>
+        </a>
+        <a href="profile.html" class="mobile-nav-item">
+            <i class="fas fa-user-circle"></i>
+            <span>Profile</span>
+        </a>
+    </nav>
+
+    <script src="js/explore.js"></script>
+</body>
+</html>

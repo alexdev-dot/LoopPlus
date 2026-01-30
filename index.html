@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoopPlus</title>
+    <style>
+        /* Loading screen styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .loader-container {
+            text-align: center;
+            color: white;
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .loading-text {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .device-info {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top: 3px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader-container">
+        <img src="Logo.png" alt="LoopPlus" class="logo" id="logo">
+        <div class="loading-text" id="loading-text">Loading LoopPlus...</div>
+        <div class="device-info" id="device-info">Detecting device...</div>
+        <div class="spinner"></div>
+    </div>
+
+    <script>
+        // Device detection and redirection logic
+        function detectDevice() {
+            const userAgent = navigator.userAgent.toLowerCase();
+            const screenWidth = window.innerWidth;
+            
+            // Update loading text
+            document.getElementById('device-info').textContent = `Screen width: ${screenWidth}px`;
+            
+            // Check if mobile device
+            const isMobile = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent);
+            const isTablet = /ipad|android(?!.*mobile)/i.test(userAgent);
+            const isSmallScreen = screenWidth <= 768;
+            
+            // Determine device type
+            let deviceType = 'desktop';
+            let redirectPath = 'web app version/index.html';
+            
+            if (isMobile || isSmallScreen) {
+                deviceType = 'mobile';
+                redirectPath = 'mobile app version/index.html';
+                document.getElementById('loading-text').textContent = 'Loading Mobile Version...';
+            } else if (isTablet) {
+                deviceType = 'tablet';
+                // For tablets, you can choose either version based on preference
+                // Here we're using web version for tablets
+                redirectPath = 'web app version/index.html';
+                document.getElementById('loading-text').textContent = 'Loading Tablet Version...';
+            } else {
+                document.getElementById('loading-text').textContent = 'Loading Desktop Version...';
+            }
+            
+            // Log device detection
+            console.log(`Device detected: ${deviceType}`);
+            console.log(`User Agent: ${userAgent}`);
+            console.log(`Screen Width: ${screenWidth}px`);
+            console.log(`Redirecting to: ${redirectPath}`);
+            
+            // Redirect after a short delay for better UX
+            setTimeout(() => {
+                window.location.href = redirectPath;
+            }, 1500);
+        }
+        
+        // Handle logo loading error
+        document.getElementById('logo').addEventListener('error', function() {
+            this.style.display = 'none';
+            document.getElementById('loading-text').textContent = 'LoopPlus';
+        });
+        
+        // Run detection when page loads
+        window.addEventListener('load', detectDevice);
+        
+        // Also detect on resize (in case device orientation changes)
+        let resizeTimer;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                // Only re-detect if significant size change
+                const currentWidth = window.innerWidth;
+                const previousWidth = window.previousWidth || currentWidth;
+                
+                if (Math.abs(currentWidth - previousWidth) > 200) {
+                    window.previousWidth = currentWidth;
+                    console.log('Significant size change detected, re-detecting device...');
+                    detectDevice();
+                }
+            }, 500);
+        });
+        
+        // Fallback redirection if detection takes too long
+        setTimeout(() => {
+            if (window.location.pathname.endsWith('/') || window.location.pathname.endsWith('/index.html')) {
+                console.log('Fallback: Redirecting to web version');
+                window.location.href = 'web app version/index.html';
+            }
+        }, 5000);
+    </script>
+</body>
+</html>

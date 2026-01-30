@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>LoopPlus Mobile</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="../js/device-detector.js"></script>
+</head>
+<body>
+    <div class="mobile-splash-screen" id="mobile-splash-screen">
+        <img src="Logo.png" alt="LoopPlus" class="mobile-splash-logo">
+    </div>
+    <!-- Main Content Area -->
+    <main class="mobile-main-content">
+        <!-- TikTok-style Navigation Tabs -->
+        <div class="mobile-nav-tabs">
+            <button class="nav-tab active" data-tab="loop">
+                <span>Loop</span>
+            </button>
+            <button class="nav-tab" data-tab="following">
+                <span>Following</span>
+            </button>
+        </div>
+        
+        <!-- Mobile Video Container -->
+        <div class="mobile-video-container">
+            <!-- Video 1 -->
+            <div class="mobile-video-item active">
+                <div class="mobile-video-player">
+                    <video class="mobile-video-element" loop muted playsinline>
+                        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+                    </video>
+                    
+                    <!-- Mobile Video Overlay -->
+                    <div class="mobile-video-overlay">
+                        <!-- Username and Caption -->
+                        <div class="mobile-video-info">
+                            <div class="mobile-username">@israelobasola</div>
+                            <div class="mobile-caption">Amazing content! #loopplus #viral</div>
+                        </div>
+                        
+                        <!-- Mobile Actions -->
+                        <div class="mobile-video-actions">
+                            <!-- Profile Picture with Follow -->
+                            <div class="mobile-profile-action">
+                                <img src="https://picsum.photos/seed/israelobasola/50/50" alt="Profile" class="mobile-profile-pic">
+                                <div class="mobile-follow-btn">
+                                    <i class="fas fa-plus"></i>
+                                </div>
+                            </div>
+                            
+                            <!-- Like -->
+                            <div class="mobile-action-btn">
+                                <i class="fas fa-heart"></i>
+                                <span class="mobile-action-count">323.5K</span>
+                            </div>
+                            
+                            <!-- Comment -->
+                            <div class="mobile-action-btn">
+                                <i class="fas fa-comment"></i>
+                                <span class="mobile-action-count">4638</span>
+                            </div>
+                            
+                            <!-- Save -->
+                            <div class="mobile-action-btn">
+                                <i class="fas fa-bookmark"></i>
+                                <span class="mobile-action-count">25.9K</span>
+                            </div>
+                            
+                            <!-- Share -->
+                            <div class="mobile-action-btn">
+                                <i class="fas fa-share"></i>
+                                <span class="mobile-action-count">15.2K</span>
+                            </div>
+                            
+                            <!-- Sound -->
+                            <div class="mobile-action-btn mobile-sound-btn">
+                                <i class="fas fa-music"></i>
+                                <div class="mobile-sound-info">
+                                    <span class="mobile-sound-title">Original Sound</span>
+                                    <img src="https://picsum.photos/seed/sound1/30/30" alt="Sound" class="mobile-sound-avatar">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Mobile Mute Button -->
+                        <div class="mobile-mute-button">
+                            <i class="fas fa-volume-mute"></i>
+                        </div>
+                        
+                        <!-- Mobile Play Indicator -->
+                        <div class="mobile-play-indicator">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mobile-video-item">
+                <div class="mobile-video-player">
+                    <video class="mobile-video-element" loop muted playsinline>
+                        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+                    </video>
+
+                    <div class="mobile-video-overlay">
+                        <div class="mobile-video-info">
+                            <div class="mobile-username">@dancequeen</div>
+                            <div class="mobile-caption">Dance moves! #dance #trending</div>
+                        </div>
+
+                        <div class="mobile-video-actions">
+                            <div class="mobile-profile-action">
+                                <img src="https://picsum.photos/seed/dancequeen/50/50" alt="Profile" class="mobile-profile-pic">
+                                <div class="mobile-follow-btn">
+                                    <i class="fas fa-plus"></i>
+                                </div>
+                            </div>
+
+                            <div class="mobile-action-btn">
+                                <i class="fas fa-heart"></i>
+                                <span class="mobile-action-count">89.2K</span>
+                            </div>
+
+                            <div class="mobile-action-btn">
+                                <i class="fas fa-comment"></i>
+                                <span class="mobile-action-count">1.1K</span>
+                            </div>
+
+                            <div class="mobile-action-btn">
+                                <i class="fas fa-bookmark"></i>
+                                <span class="mobile-action-count">7.8K</span>
+                            </div>
+
+                            <div class="mobile-action-btn">
+                                <i class="fas fa-share"></i>
+                                <span class="mobile-action-count">4.5K</span>
+                            </div>
+
+                            <div class="mobile-action-btn mobile-sound-btn">
+                                <i class="fas fa-music"></i>
+                                <div class="mobile-sound-info">
+                                    <span class="mobile-sound-title">Dance Beat</span>
+                                    <img src="https://picsum.photos/seed/sound2/30/30" alt="Sound" class="mobile-sound-avatar">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mobile-mute-button">
+                            <i class="fas fa-volume-mute"></i>
+                        </div>
+
+                        <div class="mobile-play-indicator">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mobile-video-item">
+                <div class="mobile-video-player">
+                    <video class="mobile-video-element" loop muted playsinline>
+                        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4" type="video/mp4">
+                    </video>
+
+                    <div class="mobile-video-overlay">
+                        <div class="mobile-video-info">
+                            <div class="mobile-username">@comedyking</div>
+                            <div class="mobile-caption">Funny moments! #comedy #viral</div>
+                        </div>
+
+                        <div class="mobile-video-actions">
+                            <div class="mobile-profile-action">
+                                <img src="https://picsum.photos/seed/comedyking/50/50" alt="Profile" class="mobile-profile-pic">
+                                <div class="mobile-follow-btn">
+                                    <i class="fas fa-plus"></i>
+                                </div>
+                            </div>
+
+                            <div class="mobile-action-btn">
+                                <i class="fas fa-heart"></i>
+                                <span class="mobile-action-count">234K</span>
+                            </div>
+
+                            <div class="mobile-action-btn">
+                                <i class="fas fa-comment"></i>
+                                <span class="mobile-action-count">5.6K</span>
+                            </div>
+
+                            <div class="mobile-action-btn">
+                                <i class="fas fa-bookmark"></i>
+                                <span class="mobile-action-count">25K</span>
+                            </div>
+
+                            <div class="mobile-action-btn">
+                                <i class="fas fa-share"></i>
+                                <span class="mobile-action-count">18K</span>
+                            </div>
+
+                            <div class="mobile-action-btn mobile-sound-btn">
+                                <i class="fas fa-music"></i>
+                                <div class="mobile-sound-info">
+                                    <span class="mobile-sound-title">Comedy Track</span>
+                                    <img src="https://picsum.photos/seed/sound3/30/30" alt="Sound" class="mobile-sound-avatar">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mobile-mute-button">
+                            <i class="fas fa-volume-mute"></i>
+                        </div>
+
+                        <div class="mobile-play-indicator">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mobile-video-item">
+                <div class="mobile-video-player">
+                    <video class="mobile-video-element" loop muted playsinline>
+                        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" type="video/mp4">
+                    </video>
+
+                    <div class="mobile-video-overlay">
+                        <div class="mobile-video-info">
+                            <div class="mobile-username">@foodie</div>
+                            <div class="mobile-caption">Quick recipe! #food #cooking</div>
+                        </div>
+
+                        <div class="mobile-video-actions">
+                            <div class="mobile-profile-action">
+                                <img src="https://picsum.photos/seed/foodie/50/50" alt="Profile" class="mobile-profile-pic">
+                                <div class="mobile-follow-btn">
+                                    <i class="fas fa-plus"></i>
+                                </div>
+                            </div>
+
+                            <div class="mobile-action-btn">
+                                <i class="fas fa-heart"></i>
+                                <span class="mobile-action-count">156K</span>
+                            </div>
+
+                            <div class="mobile-action-btn">
+                                <i class="fas fa-comment"></i>
+                                <span class="mobile-action-count">3.2K</span>
+                            </div>
+
+                            <div class="mobile-action-btn">
+                                <i class="fas fa-bookmark"></i>
+                                <span class="mobile-action-count">12K</span>
+                            </div>
+
+                            <div class="mobile-action-btn">
+                                <i class="fas fa-share"></i>
+                                <span class="mobile-action-count">8.9K</span>
+                            </div>
+
+                            <div class="mobile-action-btn mobile-sound-btn">
+                                <i class="fas fa-music"></i>
+                                <div class="mobile-sound-info">
+                                    <span class="mobile-sound-title">Food Vibes</span>
+                                    <img src="https://picsum.photos/seed/sound4/30/30" alt="Sound" class="mobile-sound-avatar">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mobile-mute-button">
+                            <i class="fas fa-volume-mute"></i>
+                        </div>
+
+                        <div class="mobile-play-indicator">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mobile-video-item">
+                <div class="mobile-video-player">
+                    <video class="mobile-video-element" loop muted playsinline>
+                        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4" type="video/mp4">
+                    </video>
+
+                    <div class="mobile-video-overlay">
+                        <div class="mobile-video-info">
+                            <div class="mobile-username">@naturelover</div>
+                            <div class="mobile-caption">Beautiful nature! #nature #relaxing</div>
+                        </div>
+
+                        <div class="mobile-video-actions">
+                            <div class="mobile-profile-action">
+                                <img src="https://picsum.photos/seed/naturelover/50/50" alt="Profile" class="mobile-profile-pic">
+                                <div class="mobile-follow-btn">
+                                    <i class="fas fa-plus"></i>
+                                </div>
+                            </div>
+
+                            <div class="mobile-action-btn">
+                                <i class="fas fa-heart"></i>
+                                <span class="mobile-action-count">89.2K</span>
+                            </div>
+
+                            <div class="mobile-action-btn">
+                                <i class="fas fa-comment"></i>
+                                <span class="mobile-action-count">1.1K</span>
+                            </div>
+
+                            <div class="mobile-action-btn">
+                                <i class="fas fa-bookmark"></i>
+                                <span class="mobile-action-count">7.8K</span>
+                            </div>
+
+                            <div class="mobile-action-btn">
+                                <i class="fas fa-share"></i>
+                                <span class="mobile-action-count">4.5K</span>
+                            </div>
+
+                            <div class="mobile-action-btn mobile-sound-btn">
+                                <i class="fas fa-music"></i>
+                                <div class="mobile-sound-info">
+                                    <span class="mobile-sound-title">Nature Sounds</span>
+                                    <img src="https://picsum.photos/seed/sound5/30/30" alt="Sound" class="mobile-sound-avatar">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mobile-mute-button">
+                            <i class="fas fa-volume-mute"></i>
+                        </div>
+
+                        <div class="mobile-play-indicator">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Mobile Swipe Indicator -->
+    <div class="mobile-swipe-indicator">
+        <div class="swipe-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav">
+        <a href="index.html" class="mobile-nav-item active">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="explore.html" class="mobile-nav-item">
+            <i class="fas fa-compass"></i>
+            <span>Explore</span>
+        </a>
+        <button class="mobile-nav-item mobile-create-btn">
+            <i class="fas fa-plus"></i>
+        </button>
+        <a href="#" class="mobile-nav-item">
+            <i class="fas fa-envelope"></i>
+            <span>Messages</span>
+        </a>
+        <a href="profile.html" class="mobile-nav-item">
+            <i class="fas fa-user-circle"></i>
+            <span>Profile</span>
+        </a>
+    </nav>
+
+    <script src="js/index.js"></script>
+</body>
+</html>

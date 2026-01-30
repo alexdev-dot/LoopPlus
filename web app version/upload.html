@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload - LoopPlus</title>
+    <link rel="stylesheet" href="css/upload.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Left Sidebar -->
+    <aside class="left-sidebar">
+        <!-- TikTok Logo -->
+        <div class="logo">
+            <img src="Logo.png" alt="LoopPlus" class="logo-image">
+        </div>
+        
+        <!-- Navigation Menu -->
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-item">
+                <i class="fas fa-home"></i>
+                <span>Loop</span>
+            </a>
+            <a href="explore.html" class="nav-item">
+                <i class="fas fa-compass"></i>
+                <span>Explore+</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-users"></i>
+                <span>Following</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-user-friends"></i>
+                <span>Friends</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-broadcast-tower"></i>
+                <span>STREAM</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-envelope"></i>
+                <span>Messages</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-bell"></i>
+                <span>Activity</span>
+            </a>
+            <a href="upload.html" class="nav-item active">
+                <i class="fas fa-plus-circle"></i>
+                <span>Upload</span>
+            </a>
+            <a href="profile.html" class="nav-item">
+                <i class="fas fa-user-circle"></i>
+                <span>Profile</span>
+            </a>
+            <a href="#" class="nav-item" id="more-btn">
+                <i class="fas fa-grip-horizontal"></i>
+                <span>More</span>
+            </a>
+        </nav>
+        
+        <!-- More Popup Menu -->
+        <div class="more-popup" id="more-popup">
+            <div class="popup-content">
+                <div class="popup-header">
+                    <h3>More</h3>
+                    <button class="close-popup" id="close-popup">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="popup-items">
+                    <button class="popup-item">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </button>
+                    <button class="popup-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Privacy</span>
+                    </button>
+                    <button class="popup-item">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Help Center</span>
+                    </button>
+                    <button class="popup-item">
+                        <i class="fas fa-info-circle"></i>
+                        <span>About</span>
+                    </button>
+                    <button class="popup-item">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Business</span>
+                    </button>
+                    <button class="popup-item">
+                        <i class="fas fa-palette"></i>
+                        <span>Creator Portal</span>
+                    </button>
+                    <button class="popup-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Analytics</span>
+                    </button>
+                    <button class="popup-item">
+                        <i class="fas fa-language"></i>
+                        <span>Language</span>
+                    </button>
+                    <button class="popup-item">
+                        <i class="fas fa-moon"></i>
+                        <span>Dark Mode</span>
+                    </button>
+                    <button class="popup-item">
+                        <i class="fas fa-bell"></i>
+                        <span>Notifications</span>
+                    </button>
+                    <button class="popup-item">
+                        <i class="fas fa-download"></i>
+                        <span>Download App</span>
+                    </button>
+                    <button class="popup-item">
+                        <i class="fas fa-share-alt"></i>
+                        <span>Share LoopPlus</span>
+                    </button>
+                    <button class="popup-item">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Log Out</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content upload-main">
+        <!-- Header -->
+        <header class="upload-header">
+            <div class="header-content">
+                <h1>Create Post</h1>
+                <p>Share your amazing content with the LoopPlus community</p>
+            </div>
+        </header>
+
+        <!-- Upload Container -->
+        <div class="upload-container">
+            <!-- Upload Area -->
+            <div class="upload-area" id="upload-area">
+                <div class="upload-content">
+                    <div class="upload-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h3>Drag and drop your video here</h3>
+                    <p>or click to browse</p>
+                    <button class="browse-btn" id="browse-btn">
+                        <i class="fas fa-folder-open"></i>
+                        Browse Files
+                    </button>
+                    <input type="file" id="file-input" accept="video/*" hidden>
+                    <div class="upload-requirements">
+                        <p><strong>Requirements:</strong></p>
+                        <ul>
+                            <li>MP4, MOV, AVI, or WebM format</li>
+                            <li>Maximum file size: 2GB</li>
+                            <li>Recommended resolution: 1080x1920 (9:16)</li>
+                            <li>Duration: 7 seconds to 10 minutes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Preview (Hidden by default) -->
+            <div class="video-preview" id="video-preview" style="display: none;">
+                <div class="preview-container">
+                    <video id="preview-video" controls></video>
+                    <div class="preview-overlay">
+                        <button class="change-video-btn" id="change-video-btn">
+                            <i class="fas fa-exchange-alt"></i>
+                            Change Video
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upload Form -->
+            <div class="upload-form" id="upload-form" style="display: none;">
+                <div class="form-section">
+                    <h3>Video Details</h3>
+                    
+                    <!-- Caption -->
+                    <div class="form-group">
+                        <label for="caption">Caption</label>
+                        <textarea id="caption" placeholder="Write a caption for your video..." maxlength="2200"></textarea>
+                        <div class="char-count">
+                            <span id="char-count">0</span>/2200
+                        </div>
+                    </div>
+
+                    <!-- Cover Image -->
+                    <div class="form-group">
+                        <label>Cover Image</label>
+                        <div class="cover-upload" id="cover-upload">
+                            <div class="cover-placeholder">
+                                <i class="fas fa-image"></i>
+                                <p>Add cover image</p>
+                            </div>
+                            <img id="cover-preview" style="display: none;">
+                        </div>
+                        <input type="file" id="cover-input" accept="image/*" hidden>
+                    </div>
+
+                    <!-- Privacy -->
+                    <div class="form-group">
+                        <label>Privacy</label>
+                        <div class="privacy-options">
+                            <label class="privacy-option">
+                                <input type="radio" name="privacy" value="public" checked>
+                                <span class="radio-custom"></span>
+                                <div class="privacy-info">
+                                    <strong>Public</strong>
+                                    <p>Everyone can see this video</p>
+                                </div>
+                            </label>
+                            <label class="privacy-option">
+                                <input type="radio" name="privacy" value="friends">
+                                <span class="radio-custom"></span>
+                                <div class="privacy-info">
+                                    <strong>Friends</strong>
+                                    <p>Only your friends can see this video</p>
+                                </div>
+                            </label>
+                            <label class="privacy-option">
+                                <input type="radio" name="privacy" value="private">
+                                <span class="radio-custom"></span>
+                                <div class="privacy-info">
+                                    <strong>Private</strong>
+                                    <p>Only you can see this video</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Comments -->
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="allow-comments" checked>
+                            <span class="checkbox-custom"></span>
+                            Allow comments
+                        </label>
+                    </div>
+
+                    <!-- Duet -->
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="allow-duet" checked>
+                            <span class="checkbox-custom"></span>
+                            Allow duet
+                        </label>
+                    </div>
+
+                    <!-- Stitch -->
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="allow-stitch" checked>
+                            <span class="checkbox-custom"></span>
+                            Allow stitch
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="form-actions">
+                    <button class="btn-secondary" id="cancel-btn">
+                        <i class="fas fa-times"></i>
+                        Cancel
+                    </button>
+                    <button class="btn-primary" id="post-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        Post
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Upload Progress (Hidden by default) -->
+        <div class="upload-progress" id="upload-progress" style="display: none;">
+            <div class="progress-content">
+                <h3>Uploading your video...</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <div class="progress-details">
+                    <span id="progress-percent">0%</span>
+                    <span id="progress-size">0 MB / 0 MB</span>
+                </div>
+                <p id="progress-status">Preparing upload...</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Success Modal -->
+    <div class="modal" id="success-modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Upload Successful!</h3>
+                <button class="modal-close" id="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <p>Your video has been successfully uploaded and is now being processed.</p>
+                <p>It will be available on your profile shortly.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-primary" id="view-profile-btn">
+                    View Profile
+                </button>
+                <button class="btn-secondary" id="upload-another-btn">
+                    Upload Another
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/upload.js"></script>
+</body>
+</html>

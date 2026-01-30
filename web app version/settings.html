@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - LoopPlus</title>
+    <link rel="stylesheet" href="css/settings.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Left Sidebar -->
+    <aside class="left-sidebar">
+        <!-- TikTok Logo -->
+        <div class="logo">
+            <img src="Logo.png" alt="LoopPlus" class="logo-image">
+        </div>
+        
+        <!-- Navigation Menu -->
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-item">
+                <i class="fas fa-home"></i>
+                <span>Loop</span>
+            </a>
+            <a href="explore.html" class="nav-item">
+                <i class="fas fa-compass"></i>
+                <span>Explore+</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-users"></i>
+                <span>Following</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-user-friends"></i>
+                <span>Friends</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-broadcast-tower"></i>
+                <span>STREAM</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-envelope"></i>
+                <span>Messages</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-bell"></i>
+                <span>Activity</span>
+            </a>
+            <a href="upload.html" class="nav-item">
+                <i class="fas fa-plus-circle"></i>
+                <span>Upload</span>
+            </a>
+            <a href="profile.html" class="nav-item">
+                <i class="fas fa-user-circle"></i>
+                <span>Profile</span>
+            </a>
+            <a href="#" class="nav-item" id="more-btn">
+                <i class="fas fa-grip-horizontal"></i>
+                <span>More</span>
+            </a>
+        </nav>
+        
+        <!-- More Popup Menu -->
+        <div class="more-popup" id="more-popup">
+            <div class="popup-content">
+                <div class="popup-header">
+                    <h3>More</h3>
+                    <button class="close-popup" id="close-popup">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="popup-items">
+                    <button class="popup-item">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </button>
+                    <button class="popup-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Privacy</span>
+                    </button>
+                    <button class="popup-item">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Help Center</span>
+                    </button>
+                    <button class="popup-item">
+                        <i class="fas fa-info-circle"></i>
+                        <span>About</span>
+                    </button>
+                    <button class="popup-item">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Business</span>
+                    </button>
+                    <button class="popup-item">
+                        <i class="fas fa-palette"></i>
+                        <span>Creator Portal</span>
+                    </button>
+                    <button class="popup-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Analytics</span>
+                    </button>
+                    <button class="popup-item">
+                        <i class="fas fa-language"></i>
+                        <span>Language</span>
+                    </button>
+                    <button class="popup-item">
+                        <i class="fas fa-moon"></i>
+                        <span>Dark Mode</span>
+                    </button>
+                    <button class="popup-item">
+                        <i class="fas fa-bell"></i>
+                        <span>Notifications</span>
+                    </button>
+                    <button class="popup-item">
+                        <i class="fas fa-download"></i>
+                        <span>Download App</span>
+                    </button>
+                    <button class="popup-item">
+                        <i class="fas fa-share-alt"></i>
+                        <span>Share LoopPlus</span>
+                    </button>
+                    <button class="popup-item">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Log Out</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="settings-header">
+            <div class="header-content">
+                <div class="header-left">
+                    <h1>Settings</h1>
+                    <p>Manage your account settings and preferences</p>
+                </div>
+                <div class="header-right">
+                    <button class="btn-save" id="save-all-btn">
+                        <i class="fas fa-save"></i>
+                        Save All Changes
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Settings Container -->
+        <div class="settings-container">
+            <!-- Settings Navigation -->
+            <nav class="settings-nav">
+                <button class="nav-btn active" data-section="account">
+                    <i class="fas fa-user"></i>
+                    Account
+                </button>
+                <button class="nav-btn" data-section="privacy">
+                    <i class="fas fa-shield-alt"></i>
+                    Privacy
+                </button>
+                <button class="nav-btn" data-section="notifications">
+                    <i class="fas fa-bell"></i>
+                    Notifications
+                </button>
+                <button class="nav-btn" data-section="appearance">
+                    <i class="fas fa-palette"></i>
+                    Appearance
+                </button>
+                <button class="nav-btn" data-section="content">
+                    <i class="fas fa-video"></i>
+                    Content
+                </button>
+                <button class="nav-btn" data-section="security">
+                    <i class="fas fa-lock"></i>
+                    Security
+                </button>
+                <button class="nav-btn" data-section="about">
+                    <i class="fas fa-info-circle"></i>
+                    About
+                </button>
+            </nav>
+
+            <!-- Settings Content -->
+            <div class="settings-content">
+                <!-- Account Settings -->
+                <section class="settings-section active" id="account">
+                    <h2>Account Settings</h2>
+                    
+                    <div class="setting-group">
+                        <h3>Profile Information</h3>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Username</label>
+                                <p>Your unique username for LoopPlus</p>
+                            </div>
+                            <div class="setting-control">
+                                <input type="text" id="username" value="israelobasola" class="input-field">
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Email</label>
+                                <p>Your email address for account recovery</p>
+                            </div>
+                            <div class="setting-control">
+                                <input type="email" id="email" value="user@example.com" class="input-field">
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Display Name</label>
+                                <p>How your name appears on LoopPlus</p>
+                            </div>
+                            <div class="setting-control">
+                                <input type="text" id="display-name" value="Israel Obasola" class="input-field">
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Bio</label>
+                                <p>Tell people about yourself</p>
+                            </div>
+                            <div class="setting-control">
+                                <textarea id="bio" class="textarea-field" maxlength="80">Content creator | Tech enthusiast | Living life one loop at a time 🎬</textarea>
+                                <div class="char-count">
+                                    <span id="bio-count">65</span>/80
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="setting-group">
+                        <h3>Account Status</h3>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Account Type</label>
+                                <p>Switch between personal and business account</p>
+                            </div>
+                            <div class="setting-control">
+                                <select id="account-type" class="select-field">
+                                    <option value="personal">Personal Account</option>
+                                    <option value="business">Business Account</option>
+                                    <option value="creator">Creator Account</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Account Status</label>
+                                <p>Your current account verification status</p>
+                            </div>
+                            <div class="setting-control">
+                                <div class="status-badge verified">
+                                    <i class="fas fa-check-circle"></i>
+                                    Verified Account
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Privacy Settings -->
+                <section class="settings-section" id="privacy">
+                    <h2>Privacy Settings</h2>
+                    
+                    <div class="setting-group">
+                        <h3>Profile Privacy</h3>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Private Account</label>
+                                <p>Only approved followers can see your videos</p>
+                            </div>
+                            <div class="setting-control">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="private-account">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Show Activity Status</label>
+                                <p>Let others see when you're online</p>
+                            </div>
+                            <div class="setting-control">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="show-activity" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Profile Discovery</label>
+                                <p>Allow others to find you using your email or phone</p>
+                            </div>
+                            <div class="setting-control">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="profile-discovery" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="setting-group">
+                        <h3>Content Privacy</h3>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Default Video Privacy</label>
+                                <p>Privacy setting for new videos</p>
+                            </div>
+                            <div class="setting-control">
+                                <select id="default-privacy" class="select-field">
+                                    <option value="public">Public</option>
+                                    <option value="friends">Friends</option>
+                                    <option value="private">Private</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Allow Comments</label>
+                                <p>People can comment on your videos by default</p>
+                            </div>
+                            <div class="setting-control">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="allow-comments" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Allow Duet</label>
+                                <p>People can duet with your videos by default</p>
+                            </div>
+                            <div class="setting-control">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="allow-duet" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Allow Stitch</label>
+                                <p>People can stitch with your videos by default</p>
+                            </div>
+                            <div class="setting-control">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="allow-stitch" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Notification Settings -->
+                <section class="settings-section" id="notifications">
+                    <h2>Notification Settings</h2>
+                    
+                    <div class="setting-group">
+                        <h3>Push Notifications</h3>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Video Likes</label>
+                                <p>Get notified when someone likes your videos</p>
+                            </div>
+                            <div class="setting-control">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="notify-likes" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Video Comments</label>
+                                <p>Get notified when someone comments on your videos</p>
+                            </div>
+                            <div class="setting-control">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="notify-comments" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>New Followers</label>
+                                <p>Get notified when someone follows you</p>
+                            </div>
+                            <div class="setting-control">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="notify-followers" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Mentions</label>
+                                <p>Get notified when someone mentions you</p>
+                            </div>
+                            <div class="setting-control">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="notify-mentions" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Direct Messages</label>
+                                <p>Get notified when you receive messages</p>
+                            </div>
+                            <div class="setting-control">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="notify-messages" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="setting-group">
+                        <h3>Email Notifications</h3>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Weekly Summary</label>
+                                <p>Get a weekly summary of your account activity</p>
+                            </div>
+                            <div class="setting-control">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="email-summary">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Security Alerts</label>
+                                <p>Get notified about security-related activities</p>
+                            </div>
+                            <div class="setting-control">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="email-security" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Appearance Settings -->
+                <section class="settings-section" id="appearance">
+                    <h2>Appearance Settings</h2>
+                    
+                    <div class="setting-group">
+                        <h3>Theme</h3>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Dark Mode</label>
+                                <p>Use dark theme across the app</p>
+                            </div>
+                            <div class="setting-control">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="dark-mode">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Compact View</label>
+                                <p>Show more content with smaller elements</p>
+                            </div>
+                            <div class="setting-control">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="compact-view">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Reduce Animations</label>
+                                <p>Minimize animations for better performance</p>
+                            </div>
+                            <div class="setting-control">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="reduce-animations">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="setting-group">
+                        <h3>Language</h3>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>App Language</label>
+                                <p>Choose your preferred language</p>
+                            </div>
+                            <div class="setting-control">
+                                <select id="language" class="select-field">
+                                    <option value="en">English</option>
+                                    <option value="es">Español</option>
+                                    <option value="fr">Français</option>
+                                    <option value="de">Deutsch</option>
+                                    <option value="it">Italiano</option>
+                                    <option value="pt">Português</option>
+                                    <option value="ja">日本語</option>
+                                    <option value="ko">한국어</option>
+                                    <option value="zh">中文</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Auto-translate</label>
+                                <p>Automatically translate captions and comments</p>
+                            </div>
+                            <div class="setting-control">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="auto-translate">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Content Settings -->
+                <section class="settings-section" id="content">
+                    <h2>Content Settings</h2>
+                    
+                    <div class="setting-group">
+                        <h3>Video Playback</h3>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Autoplay</label>
+                                <p>Automatically play videos when scrolling</p>
+                            </div>
+                            <div class="setting-control">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="autoplay" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Data Saver</label>
+                                <p>Reduce video quality to save data</p>
+                            </div>
+                            <div class="setting-control">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="data-saver">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Video Quality</label>
+                                <p>Default video quality for playback</p>
+                            </div>
+                            <div class="setting-control">
+                                <select id="video-quality" class="select-field">
+                                    <option value="auto">Auto</option>
+                                    <option value="1080p">1080p</option>
+                                    <option value="720p">720p</option>
+                                    <option value="480p">480p</option>
+                                    <option value="360p">360p</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Captions</label>
+                                <p>Show captions by default when available</p>
+                            </div>
+                            <div class="setting-control">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="show-captions">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="setting-group">
+                        <h3>Content Preferences</h3>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Content Filter</label>
+                                <p>Filter sensitive content</p>
+                            </div>
+                            <div class="setting-control">
+                                <select id="content-filter" class="select-field">
+                                    <option value="none">No Filter</option>
+                                    <option value="moderate" selected>Filter Some</option>
+                                    <option value="strict">Filter Most</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Show Mature Content</label>
+                                <p>Display content that may be inappropriate</p>
+                            </div>
+                            <div class="setting-control">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="mature-content">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Security Settings -->
+                <section class="settings-section" id="security">
+                    <h2>Security Settings</h2>
+                    
+                    <div class="setting-group">
+                        <h3>Login Security</h3>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Two-Factor Authentication</label>
+                                <p>Add an extra layer of security to your account</p>
+                            </div>
+                            <div class="setting-control">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="two-factor">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Login Alerts</label>
+                                <p>Get notified when someone logs into your account</p>
+                            </div>
+                            <div class="setting-control">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="login-alerts" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="setting-group">
+                        <h3>Connected Accounts</h3>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Connected Accounts</label>
+                                <p>Manage accounts connected to LoopPlus</p>
+                            </div>
+                            <div class="setting-control">
+                                <div class="connected-accounts">
+                                    <div class="account-item">
+                                        <i class="fab fa-google"></i>
+                                        <span>Google</span>
+                                        <button class="btn-disconnect">Disconnect</button>
+                                    </div>
+                                    <div class="account-item">
+                                        <i class="fab fa-facebook"></i>
+                                        <span>Facebook</span>
+                                        <button class="btn-disconnect">Disconnect</button>
+                                    </div>
+                                    <div class="account-item">
+                                        <i class="fab fa-apple"></i>
+                                        <span>Apple</span>
+                                        <button class="btn-disconnect">Disconnect</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="setting-group">
+                        <h3>Danger Zone</h3>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Download Your Data</label>
+                                <p>Get a copy of your data from LoopPlus</p>
+                            </div>
+                            <div class="setting-control">
+                                <button class="btn-secondary" id="download-data">
+                                    <i class="fas fa-download"></i>
+                                    Request Data
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Delete Account</label>
+                                <p>Permanently delete your account and data</p>
+                            </div>
+                            <div class="setting-control">
+                                <button class="btn-danger" id="delete-account">
+                                    <i class="fas fa-trash"></i>
+                                    Delete Account
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- About Settings -->
+                <section class="settings-section" id="about">
+                    <h2>About LoopPlus</h2>
+                    
+                    <div class="setting-group">
+                        <h3>App Information</h3>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Version</label>
+                                <p>LoopPlus Web v2.0.1</p>
+                            </div>
+                            <div class="setting-control">
+                                <div class="version-info">
+                                    <span class="version-badge">Latest</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Build</label>
+                                <p>Build 2024.01.31</p>
+                            </div>
+                            <div class="setting-control">
+                                <button class="btn-secondary" id="check-updates">
+                                    <i class="fas fa-sync"></i>
+                                    Check for Updates
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="setting-group">
+                        <h3>Legal</h3>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Terms of Service</label>
+                                <p>Read our terms and conditions</p>
+                            </div>
+                            <div class="setting-control">
+                                <button class="btn-secondary" id="terms-service">
+                                    <i class="fas fa-file-contract"></i>
+                                    View Terms
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Privacy Policy</label>
+                                <p>Learn how we protect your data</p>
+                            </div>
+                            <div class="setting-control">
+                                <button class="btn-secondary" id="privacy-policy">
+                                    <i class="fas fa-shield-alt"></i>
+                                    View Policy
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Cookie Policy</label>
+                                <p>Understand our use of cookies</p>
+                            </div>
+                            <div class="setting-control">
+                                <button class="btn-secondary" id="cookie-policy">
+                                    <i class="fas fa-cookie"></i>
+                                    View Policy
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="setting-group">
+                        <h3>Support</h3>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Help Center</label>
+                                <p>Get help with LoopPlus</p>
+                            </div>
+                            <div class="setting-control">
+                                <button class="btn-secondary" id="help-center">
+                                    <i class="fas fa-question-circle"></i>
+                                    Visit Help Center
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Contact Support</label>
+                                <p>Get in touch with our support team</p>
+                            </div>
+                            <div class="setting-control">
+                                <button class="btn-secondary" id="contact-support">
+                                    <i class="fas fa-envelope"></i>
+                                    Contact Us
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Report a Problem</label>
+                                <p>Help us improve LoopPlus</p>
+                            </div>
+                            <div class="setting-control">
+                                <button class="btn-secondary" id="report-problem">
+                                    <i class="fas fa-bug"></i>
+                                    Report Issue
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Success Modal -->
+    <div class="modal" id="success-modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Settings Saved</h3>
+                <button class="modal-close" id="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <p>Your settings have been successfully saved.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-primary" id="modal-ok">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/settings.js"></script>
+</body>
+</html>
