@@ -35,13 +35,17 @@ document.addEventListener('DOMContentLoaded', () => {
     function initializeMobileVideos() {
         // Set up mobile video elements
         mobileVideoElements.forEach((video, index) => {
-            // Set video attributes
-            video.muted = false;
+            // Set video attributes - DISABLE AUTOPLAY
+            video.muted = true;
             video.loop = true;
             video.playsinline = true;
-            video.preload = 'metadata';
+            video.preload = 'metadata'; // Changed from 'auto' to 'metadata' for performance
             video.setAttribute('webkit-playsinline', 'true');
             video.setAttribute('x5-playsinline', 'true');
+            
+            // Ensure videos don't autoplay
+            video.autoplay = false;
+            video.pause();
             
             // Mobile video event listeners
             video.addEventListener('loadedmetadata', () => {
@@ -51,12 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     mobileVideoItems[index].classList.add('loaded');
                 }
                 
-                // Auto-play first video when metadata is loaded
-                if (index === 0 && !isVideoPlaying) {
-                    setTimeout(() => {
-                        playMobileVideo(index);
-                    }, 100);
-                }
+                // DISABLE AUTOPLAY - Only load poster/thumbnail
+                console.log(`Video ${index + 1} ready for manual play`);
             });
             
             video.addEventListener('canplay', () => {
@@ -125,17 +125,14 @@ document.addEventListener('DOMContentLoaded', () => {
             setupSwipeDots();
         }
         
-        // Set up intersection observer for auto-play
+        // Set up intersection observer for MANUAL play only (no autoplay)
+        // DISABLE AUTOPLAY ON SCROLL - Only for performance monitoring
         if (enableAutoPlayOnScroll) {
             setupIntersectionObserver();
         }
         
-        // Initialize first video manually if auto-play fails
-        setTimeout(() => {
-            if (!isVideoPlaying && mobileVideoElements[0]) {
-                playMobileVideo(0);
-            }
-        }, 1000);
+        // DISABLE AUTOPLAY INITIALIZATION
+        // Videos will only play when user explicitly clicks them
     }
     
     function playMobileVideo(index) {
@@ -584,17 +581,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 if (!video) return;
                 
-                if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
-                    // Video is more than 50% visible
-                    if (index !== currentVideoIndex) {
-                        console.log(`Video ${index + 1} is visible (${Math.round(entry.intersectionRatio * 100)}%), switching to it`);
-                        playMobileVideo(index);
+                // PERFORMANCE OPTIMIZATION - Pause videos when not visible
+                if (!entry.isIntersecting && entry.intersectionRatio < 0.1) {
+                    // Video is hidden, pause it to save bandwidth
+                    if (!video.paused) {
+                        console.log(`Video ${index + 1} is hidden (${Math.round(entry.intersectionRatio * 100)}%), pausing for performance`);
+                        video.pause();
+                        isVideoPlaying = false;
                     }
-                } else if (!entry.isIntersecting && index === currentVideoIndex) {
-                    // Current video is no longer visible, pause it
-                    if (entry.intersectionRatio < 0.1) {
-                        console.log(`Video ${index + 1} is hidden (${Math.round(entry.intersectionRatio * 100)}%), pausing`);
-                        pauseMobileVideo(index);
+                }
+                
+                // DISABLE AUTOPLAY - Only track visibility, don't auto-play
+                if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+                    console.log(`Video ${index + 1} is visible (${Math.round(entry.intersectionRatio * 100)}%) - ready for manual play`);
+                    // Update current video index for manual controls
+                    if (index !== currentVideoIndex) {
+                        currentVideoIndex = index;
+                        updateActiveStates(index);
                     }
                 }
             });
@@ -604,7 +607,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileVideoItems.forEach((item, index) => {
             if (item) {
                 observer.observe(item);
-                console.log(`Observing video ${index + 1}`);
+                console.log(`Observing video ${index + 1} for performance optimization`);
             }
         });
         
@@ -661,25 +664,20 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileVideoItems[0].classList.add('loaded');
     }
     
-    // Handle page visibility changes
+    // Handle page visibility changes - PERFORMANCE OPTIMIZATION
     document.addEventListener('visibilitychange', () => {
         if (document.hidden) {
-            // Pause all videos when page is hidden
+            // Pause ALL videos when page is hidden to save bandwidth
             mobileVideoElements.forEach(video => {
                 if (video && !video.paused) {
                     video.pause();
                 }
             });
             isVideoPlaying = false;
-            console.log('Page hidden, videos paused');
-        } else if (currentVideoIndex >= 0) {
-            // Resume current video when page is visible
-            setTimeout(() => {
-                if (mobileVideoElements[currentVideoIndex]) {
-                    playMobileVideo(currentVideoIndex);
-                }
-            }, 100);
-            console.log('Page visible, resuming video');
+            console.log('Page hidden, all videos paused for performance');
+        } else {
+            // Keep videos paused when page becomes visible - require user interaction
+            console.log('Page visible - videos remain paused until user interaction');
         }
     });
     
@@ -718,15 +716,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-    // Handle orientation change for mobile devices
+    // Handle orientation change for mobile devices - PERFORMANCE OPTIMIZATION
     window.addEventListener('orientationchange', () => {
-        setTimeout(() => {
-            // Reinitialize videos after orientation change
-            if (currentVideoIndex >= 0 && mobileVideoElements[currentVideoIndex]) {
-                const video = mobileVideoElements[currentVideoIndex];
-                video.currentTime = 0;
-                playMobileVideo(currentVideoIndex);
+        // Pause all videos during orientation change
+        mobileVideoElements.forEach(video => {
+            if (video && !video.paused) {
+                video.pause();
             }
+        });
+        isVideoPlaying = false;
+        
+        setTimeout(() => {
+            // Keep videos paused after orientation change - require user interaction
+            console.log('Orientation change complete - videos remain paused for performance');
         }, 500);
     });
     
@@ -791,5 +793,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize performance monitoring
     monitorVideoPerformance();
     
-    console.log('LoopPlus Mobile Index Page initialized');
+    console.log('LoopPlus Mobile Index Page initialized - Videos optimized for manual playback');
+    
+    // Add initial state to show play indicators
+    mobileVideoItems.forEach((item, index) => {
+        const playIndicator = item.querySelector('.mobile-play-indicator');
+        if (playIndicator) {
+            playIndicator.classList.add('show');
+        }
+    });
+    
+    // Ensure all videos are paused on load
+    setTimeout(() => {
+        mobileVideoElements.forEach((video, index) => {
+            if (video && !video.paused) {
+                video.pause();
+                console.log(`Force paused video ${index + 1} on load`);
+            }
+        });
+        isVideoPlaying = false;
+    }, 500);
 });

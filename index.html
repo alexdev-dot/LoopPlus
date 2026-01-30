@@ -5,148 +5,265 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LoopPlus</title>
     <style>
-        /* Loading screen styles */
-        body {
+        /* TikTok-style loading screen */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #000;
+            color: white;
+            overflow: hidden;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            overflow: hidden;
+            position: relative;
         }
         
+        /* TikTok-style background */
+        .tiktok-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, 
+                rgba(0,0,0,0.95) 0%, 
+                rgba(25,25,25,0.9) 50%, 
+                rgba(0,0,0,0.95) 100%);
+            z-index: -2;
+        }
+        
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            z-index: -1;
+        }
+        
+        .floating-element {
+            position: absolute;
+            background: linear-gradient(45deg, #ff0050, #00f2ea);
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 20s infinite ease-in-out;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            33% { transform: translateY(-30px) rotate(120deg); }
+            66% { transform: translateY(30px) rotate(240deg); }
+        }
+        
+        /* Loading container */
         .loader-container {
             text-align: center;
-            color: white;
+            z-index: 10;
+            animation: fadeIn 0.5s ease-out;
         }
         
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        /* TikTok-style logo */
         .logo {
             width: 80px;
             height: 80px;
-            margin-bottom: 20px;
+            margin: 0 auto 30px;
+            background: linear-gradient(45deg, #ff0050, #00f2ea);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: bold;
+            color: white;
             animation: pulse 2s infinite;
+            box-shadow: 0 8px 32px rgba(255, 0, 80, 0.3);
         }
         
         @keyframes pulse {
             0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+            50% { transform: scale(1.05); }
         }
         
+        /* Loading text */
         .loading-text {
-            font-size: 18px;
-            font-weight: 500;
-            margin-bottom: 10px;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #ff0050, #00f2ea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         .device-info {
             font-size: 14px;
-            opacity: 0.8;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 30px;
         }
         
+        /* TikTok-style spinner */
         .spinner {
-            width: 40px;
-            height: 40px;
-            border: 3px solid rgba(255, 255, 255, 0.3);
-            border-top: 3px solid white;
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top: 3px solid #ff0050;
             border-radius: 50%;
             animation: spin 1s linear infinite;
-            margin: 20px auto;
+            margin: 0 auto;
         }
         
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+        
+        /* Progress bar */
+        .progress-bar {
+            width: 200px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            margin: 20px auto 0;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff0050, #00f2ea);
+            border-radius: 2px;
+            animation: progress 1.5s ease-out forwards;
+        }
+        
+        @keyframes progress {
+            from { width: 0%; }
+            to { width: 100%; }
+        }
+        
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            .logo {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+            }
+            
+            .loading-text {
+                font-size: 20px;
+            }
+            
+            .device-info {
+                font-size: 12px;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- TikTok-style background -->
+    <div class="tiktok-bg"></div>
+    <div class="floating-elements">
+        <div class="floating-element" style="width: 100px; height: 100px; top: 10%; left: 10%; animation-delay: 0s;"></div>
+        <div class="floating-element" style="width: 60px; height: 60px; top: 70%; right: 15%; animation-delay: 5s;"></div>
+        <div class="floating-element" style="width: 80px; height: 80px; bottom: 20%; left: 20%; animation-delay: 10s;"></div>
+        <div class="floating-element" style="width: 120px; height: 120px; top: 40%; right: 10%; animation-delay: 15s;"></div>
+    </div>
+
+    <!-- Loading content -->
     <div class="loader-container">
-        <img src="Logo.png" alt="LoopPlus" class="logo" id="logo">
-        <div class="loading-text" id="loading-text">Loading LoopPlus...</div>
-        <div class="device-info" id="device-info">Detecting device...</div>
+        <div class="logo">LP</div>
+        <div class="loading-text" id="loading-text">Loading LoopPlus</div>
+        <div class="device-info" id="device-info">Optimizing experience for your device...</div>
         <div class="spinner"></div>
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
     </div>
 
     <script>
-        // Device detection and redirection logic
-        function detectDevice() {
+        // Automatic device detection and redirection (TikTok-style)
+        function detectAndRedirect() {
             const userAgent = navigator.userAgent.toLowerCase();
             const screenWidth = window.innerWidth;
-            
-            // Update loading text
-            document.getElementById('device-info').textContent = `Screen width: ${screenWidth}px`;
-            
-            // Check if mobile device
-            const isMobile = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent);
-            const isTablet = /ipad|android(?!.*mobile)/i.test(userAgent);
-            const isSmallScreen = screenWidth <= 768;
             
             // Determine device type
             let deviceType = 'desktop';
             let redirectPath = 'web app version/index.html';
+            let loadingMessage = 'Loading Desktop Experience';
             
-            if (isMobile || isSmallScreen) {
+            if (/android|webos|iphone|ipod|blackberry|iemobile|opera mini/i.test(userAgent) || screenWidth <= 768) {
                 deviceType = 'mobile';
                 redirectPath = 'mobile app version/index.html';
-                document.getElementById('loading-text').textContent = 'Loading Mobile Version...';
-            } else if (isTablet) {
+                loadingMessage = 'Loading Mobile Experience';
+            } else if (/ipad|android(?!.*mobile)/i.test(userAgent) || (screenWidth > 768 && screenWidth <= 1024)) {
                 deviceType = 'tablet';
-                // For tablets, you can choose either version based on preference
-                // Here we're using web version for tablets
                 redirectPath = 'web app version/index.html';
-                document.getElementById('loading-text').textContent = 'Loading Tablet Version...';
-            } else {
-                document.getElementById('loading-text').textContent = 'Loading Desktop Version...';
+                loadingMessage = 'Loading Tablet Experience';
             }
             
-            // Log device detection
-            console.log(`Device detected: ${deviceType}`);
-            console.log(`User Agent: ${userAgent}`);
-            console.log(`Screen Width: ${screenWidth}px`);
-            console.log(`Redirecting to: ${redirectPath}`);
+            // Update loading message
+            document.getElementById('loading-text').textContent = loadingMessage;
+            document.getElementById('device-info').textContent = `Detected ${deviceType} • ${screenWidth}px`;
             
-            // Redirect after a short delay for better UX
+            // Log for debugging
+            console.log(`LoopPlus Auto-Detection:`);
+            console.log(`- Device: ${deviceType}`);
+            console.log(`- Screen: ${screenWidth}px`);
+            console.log(`- Redirecting to: ${redirectPath}`);
+            
+            // Automatic redirect after loading animation (1.5 seconds)
             setTimeout(() => {
-                window.location.href = redirectPath;
+                // Smooth fade out transition
+                document.body.style.opacity = '0';
+                document.body.style.transition = 'opacity 0.3s ease';
+                
+                setTimeout(() => {
+                    window.location.href = redirectPath;
+                }, 300);
             }, 1500);
         }
         
         // Handle logo loading error
-        document.getElementById('logo').addEventListener('error', function() {
-            this.style.display = 'none';
-            document.getElementById('loading-text').textContent = 'LoopPlus';
+        document.addEventListener('DOMContentLoaded', () => {
+            // Start detection immediately
+            detectAndRedirect();
         });
         
-        // Run detection when page loads
-        window.addEventListener('load', detectDevice);
-        
-        // Also detect on resize (in case device orientation changes)
-        let resizeTimer;
-        window.addEventListener('resize', function() {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(function() {
-                // Only re-detect if significant size change
-                const currentWidth = window.innerWidth;
-                const previousWidth = window.previousWidth || currentWidth;
-                
-                if (Math.abs(currentWidth - previousWidth) > 200) {
-                    window.previousWidth = currentWidth;
-                    console.log('Significant size change detected, re-detecting device...');
-                    detectDevice();
-                }
-            }, 500);
-        });
-        
-        // Fallback redirection if detection takes too long
+        // Fallback redirect if something goes wrong
         setTimeout(() => {
-            if (window.location.pathname.endsWith('/') || window.location.pathname.endsWith('/index.html')) {
+            if (window.location.pathname === '/' || window.location.pathname.endsWith('/index.html')) {
                 console.log('Fallback: Redirecting to web version');
                 window.location.href = 'web app version/index.html';
             }
         }, 5000);
+        
+        // Add some TikTok-style interactions
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add subtle parallax effect to floating elements
+            document.addEventListener('mousemove', (e) => {
+                const elements = document.querySelectorAll('.floating-element');
+                const x = e.clientX / window.innerWidth;
+                const y = e.clientY / window.innerHeight;
+                
+                elements.forEach((element, index) => {
+                    const speed = (index + 1) * 10;
+                    const xOffset = (x - 0.5) * speed;
+                    const yOffset = (y - 0.5) * speed;
+                    
+                    element.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
+                });
+            });
+        });
     </script>
 </body>
 </html>
