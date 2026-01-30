@@ -942,24 +942,6 @@ body {
     perspective: 1000px;
 }
 
-/* Manual play indicator */
-.mobile-video-item:not(.playing) .mobile-play-indicator {
-    display: flex !important;
-    opacity: 0.8 !important;
-    animation: pulsePlay 2s ease-in-out infinite;
-}
-
-@keyframes pulsePlay {
-    0%, 100% { 
-        opacity: 0.6; 
-        transform: scale(1);
-    }
-    50% { 
-        opacity: 1; 
-        transform: scale(1.1);
-    }
-}
-
 /* Video container optimizations */
 .mobile-video-container {
     scroll-snap-type: y mandatory;
@@ -977,17 +959,6 @@ body {
     contain: layout style paint;
     will-change: transform;
     transform: translateZ(0);
-}
-
-/* Paused state styling */
-.mobile-video-item:not(.playing) .mobile-video-element {
-    filter: brightness(0.8);
-    transition: filter 0.3s ease;
-}
-
-.mobile-video-item.playing .mobile-video-element {
-    filter: brightness(1);
-    transition: filter 0.3s ease;
 }
 
 .mobile-video-overlay {
